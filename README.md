@@ -24,10 +24,15 @@ mkdir -p ~/.local/bin/kubectl
 mv ./kubectl ~/.local/bin/kubectl
 ```
 
-Create Cluster:
+Create cluster:
 ```bash
 kind create cluster --name=kubernetes-spark
 ```
+Show nodes created:
+```bash
+kubectl get nodes
+```
+
 References:
 - https://kind.sigs.k8s.io
 - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
