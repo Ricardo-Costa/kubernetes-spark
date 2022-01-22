@@ -33,6 +33,12 @@ Show nodes created:
 kubectl get nodes
 ```
 
+Show nodes created:
+```bash
+docker build -t app1 .
+```
+
 References:
 - https://kind.sigs.k8s.io
 - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
+- https://docs.docker.com/language/nodejs/build-images
