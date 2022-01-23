@@ -2,6 +2,12 @@
 
 This repository use **Kind** as kuernates, to run on local.
 
+## Tools
+
+- Kind
+- Docker
+- Lens
+
 Install `Kind`:
 
 ```bash
@@ -120,5 +126,6 @@ kubectl rollout undo deployment app-node
 References:
 - https://kind.sigs.k8s.io
 - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
+- https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container
 - https://docs.docker.com/language/nodejs/build-images
 - https://k8slens.dev
