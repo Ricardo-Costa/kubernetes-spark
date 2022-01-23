@@ -24,6 +24,8 @@ mkdir -p ~/.local/bin/kubectl
 mv ./kubectl ~/.local/bin/kubectl
 ```
 
+## Main Cluster
+
 Create cluster:
 ```bash
 kind create cluster --name=kubernetes-spark
@@ -33,12 +35,16 @@ Show nodes created:
 kubectl get nodes
 ```
 
+## Docker Image
+
 Build main app image and push to Dockerhub:
 ```bash
 docker build -t <image-name:latest> . &&\
 docker login &&\
 docker image push <image-name:latest> .
 ```
+
+## Pods
 
 Deploy with the new image from Dockerhub:
 ```bash
@@ -48,6 +54,43 @@ kubectl apply -f k8s/deployment.yml
 Show pods:
 ```bash
 kubectl get pods
+```
+
+Show delete pod:
+```bash
+kubctl delete app-node-85c8d7b5ff-96k8k
+```
+
+Show logs from specific pod:
+```bash
+kubctl logs app-node-85c8d7b5ff-96k8k
+```
+
+Delete specific pod:
+```bash
+kubectl delete pod app-node-85c8d7b5ff-96k8k
+```
+
+## Services
+
+Create service:
+```bash
+kubectl apply -f k8s/service.yml
+```
+Show services:
+```bash
+kubectl get services
+```
+
+Bind de ports from service:
+```bash
+kubectl port-forward service/app-node-service 3000:3000
+```
+
+Test Service:
+```bash
+curl http://localhost:3000
+# response {"status":200,"message":"Hello World!!"}
 ```
 
 References:
