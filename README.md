@@ -66,6 +66,12 @@ Show pods:
 kubectl get pods
 ```
 
+Run in pods:
+```bash
+kubectl exec --stdin --tty <pod-name> -- /bin/sh
+# OR kubectl exec -ti <pod-name> -- sh
+```
+
 Show delete pod:
 ```bash
 kubctl delete app-node-85c8d7b5ff-96k8k
@@ -115,3 +121,4 @@ References:
 - https://kind.sigs.k8s.io
 - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
 - https://docs.docker.com/language/nodejs/build-images
+- https://k8slens.dev
