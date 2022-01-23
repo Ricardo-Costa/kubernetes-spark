@@ -44,12 +44,22 @@ docker login &&\
 docker image push <image-name:latest> .
 ```
 
-## Pods
+## Deployments
 
 Deploy with the new image from Dockerhub:
 ```bash
 kubectl apply -f k8s/deployment.yml
 ```
+Show Deployments:
+```bash
+kubectl get deployments
+```
+Delete Deployment:
+```bash
+kubectl delete deployment <deployment-name>
+```
+
+## Pods
 
 Show pods:
 ```bash
@@ -91,6 +101,14 @@ Test Service:
 ```bash
 curl http://localhost:3000
 # response {"status":200,"message":"Hello World!!"}
+```
+
+## Versions
+
+Make rollout of version:
+
+```bash
+kubectl rollout undo deployment app-node
 ```
 
 References:
