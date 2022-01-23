@@ -33,9 +33,21 @@ Show nodes created:
 kubectl get nodes
 ```
 
-Show nodes created:
+Build main app image and push to Dockerhub:
 ```bash
-docker build -t app1 .
+docker build -t <image-name:latest> . \&&
+docker login \&&
+docker image push <image-name:latest> .
+```
+
+Deploy with the new image from Dockerhub:
+```bash
+kubectl apply -f k8s/deployment.yml
+```
+
+Show pods:
+```bash
+kubectl get pods
 ```
 
 References:
