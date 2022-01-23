@@ -35,8 +35,8 @@ kubectl get nodes
 
 Build main app image and push to Dockerhub:
 ```bash
-docker build -t <image-name:latest> . \&&
-docker login \&&
+docker build -t <image-name:latest> . &&\
+docker login &&\
 docker image push <image-name:latest> .
 ```
 
