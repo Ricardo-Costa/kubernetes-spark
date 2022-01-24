@@ -7,7 +7,8 @@ WORKDIR /home/node/app
 
 COPY package.json package-lock.json ./
 
-RUN npm i --production
+# RUN npm i --production
+RUN npm ci --production
 
 COPY . ./
 
